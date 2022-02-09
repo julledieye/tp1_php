@@ -1,0 +1,27 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    align-content: space-between;
+   
+}
+ul.list{
+display: grid;
+grid-template-columns: 1fr ;
+grid-column-gap: 0.1em;
+grid-row-gap: 0.6em;
+
+
+}
+li{
+ list-style: none;
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ flex-direction: row;
+ width: 18em;
+ justify-content: center;
+
+}

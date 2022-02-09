@@ -1,0 +1,19 @@
+.container{
+        margin-left:23vh;
+        margin-top:23vh;
+        border:9px solid blue;
+        display:flex;
+        flex-direction:column;
+        padding:2em 2em ;
+        width: 144vh;
+    }
+    span{
+        color:red;
+    }
+    .couleur{
+        border :1px solid red;
+    }
+    textArea{
+        resize:none;
+        
+    }
