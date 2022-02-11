@@ -2,11 +2,14 @@
 session_start();
 include_once('fonction.php');
 if(isset($_POST['valider'])){
-    $phrase = ltrim($_POST['phrase']) ;
-   
-}else{
-    if(empty($_REQUEST['phrase'])){
-        $_SESSION['sms']="le champs ne doit pas etre vide";
+    $phrase = $_POST['phrase'];
+    $erreur=[];
+    estValide($phrase,"erreur",$erreur);
+    if(count($erreur)==0){   
+        (ctype_upper ($phrase)) ;
+        
+    }else{
+        $_SESSION['erreur']=$erreur;
         header('location:index.php');
     }
 }

@@ -4,10 +4,18 @@
         flex-direction:column;
         margin:3em 3em 4em 3em ;
     }
+    span{
+        color:red;
+    }
+    .couleur{
+        border:2px solid red;
+    }
 </style>
 <?php
 session_start();
-include_once('fonction.php');
+if(isset($_SESSION['erreur'])){
+  var_dump($_SESSION['erreur']);
+}
 
 
 ?>
@@ -15,22 +23,28 @@ include_once('fonction.php');
     <form action="controller.php" method="POST">
         <label for="te"> Ecrire des  phrases:</label>
         <br>
-        <textArea id="te"  name="phrase" cols="130" rows="10" style="resize:none;" >
+        <textArea id="te"  name="phrase" cols="130" rows="3"  
+         class="<?=(isset($_SESSION['erreur']))?'couleur':''?>""
+        >
         
         </textArea>
-        <span> <?php (isset($_SESSION['sms']))?$_SESSION['sms']:'' ?></span>
+        <span>
+            <?=(isset($_SESSION["erreur"]))?$_SESSION['erreur']['erreur']:""?>
+        </span>
         <br>
-        <input type="submit" name="valider" v="valider"/>
+        <input type="submit" name="valider" value="valider"/>
     </form>
     <form action="controller.php" method="POST">
         <label for="co"> Apres corection de la phrase:</label>
         <br>
-        <textArea id="co" name="phrase_corrige" readonly cols="130" rows="10">
+        <textArea id="co" name="phrase_corrige" readonly cols="130" rows="3">
          
         </textArea>
         
     </form>
 </div>
 <?php
-  
+  if(isset($_SESSION['erreur'])){
+    unset($_SESSION['erreur']);
+  }
 ?>

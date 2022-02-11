@@ -2,48 +2,35 @@
 /**
  * fonction qui teste si les champs sont void
  */
-function estVide($n):bool{
+function estVide(string $n):bool{
   return empty($n);
 }
 /**
- * fonction qui suprime les espase au debut et a la fin
+ * fonction qui teste si 1° lettre est en majuscule
  */
-function delEspace($phrase):string{
-    return trim($phrase);
+function estMaju(string $phrase):bool{
+    return ctype_upper($phrase);
 }
 /**
- * fonction qui met le premiere caracter en majuscul
+ * fonction qui test si un phrase compte au moins 25 carateres
  */
-function setMajuscul(array &$tab1):void{
-    $tab1[0]=lcfirst($tab1[0]);
+function estLong(string $phrase):bool{
+    return (strlen($phrase)>=25) ;
 }
 /**
- * fonction qui suprime les case vide du tableau
+ * fonction qui teste si une phrase est phrase 
  */
-function suprimVide(array &$tab1):void{
-   unset($tab1[sizeof($tab1)-1]);
-}
-/**
- * fonction pour supprimer les espaces
- */
-function getTabPhrase($phrase,array &$tab1):void{
-    $tab1 = explode('.',$phrase);
-}
-/**
- * fonction qui remplac les cracteres especiaux
- */
-function deleteSpecialChar($phrase):void{  
-    // remplacer tous les caractères spéciaux par une chaîne vide
-    $phrase = str_replace( array( '%', '@', '\'', '-', '<', '>','=','£', '$', 'µ' ), ' ', $phrase);   
-}
-/**
- * 
- */
-function suprimerEspace(string $str):string{ 
-    $str = str_replace(["\r", "\n", "\t"], " ", $str);
-    while (strpos($str, "  ") !== false){
-        $str = str_replace("  ", " ", $str);
+function estValide(string &$phrase,string $key,array &$erreur):void{
+    if(estVide(trim($phrase))){
+        $erreur[$key]="Veuillez saisir une phrase ";
+    }else{
+        if(!estMaju($phrase[0])){
+            $erreur[$key]="Veuillez saisir une phrase qui commence par une lettre mausculle";
+        }else{
+            if(!estLong($phrase)){
+                $erreur[$key]="Veuillez saisir une phrase qui a 25 caracteres aux moins";
+            }
+        }
     }
-    return $str;
 }
 ?>
