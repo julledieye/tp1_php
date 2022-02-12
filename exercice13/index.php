@@ -4,7 +4,7 @@
         flex-direction:column;
         margin:3em 3em 4em 3em ;
     }
-    span{
+    p{
         color:red;
     }
     .couleur{
@@ -16,7 +16,10 @@ session_start();
 if(isset($_SESSION['erreur'])){
   var_dump($_SESSION['erreur']);
 }
-
+if(isset($_SESSION['phrase'])){
+    var_dump($_SESSION['phrase']);
+  }
+  
 
 ?>
 <div>
@@ -24,14 +27,13 @@ if(isset($_SESSION['erreur'])){
         <label for="te"> Ecrire des  phrases:</label>
         <br>
         <textArea id="te"  name="phrase" cols="130" rows="3"  
-         class="<?=(isset($_SESSION['erreur']))?'couleur':''?>""
+         class="<?=(isset($_SESSION['erreur']))?'couleur':''?>"
         >
-        
+        <?=(isset($_SESSION["post"]['phrase']))?$_SESSION['post']['phrase']:""?>
         </textArea>
-        <span>
+        <p>
             <?=(isset($_SESSION["erreur"]))?$_SESSION['erreur']['erreur']:""?>
-        </span>
-        <br>
+        </p>
         <input type="submit" name="valider" value="valider"/>
     </form>
     <form action="controller.php" method="POST">
@@ -47,4 +49,8 @@ if(isset($_SESSION['erreur'])){
   if(isset($_SESSION['erreur'])){
     unset($_SESSION['erreur']);
   }
+  if(isset($_SESSION['post'])){
+    unset($_SESSION['post']);
+  }
+ 
 ?>

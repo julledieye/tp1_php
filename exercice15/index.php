@@ -45,7 +45,7 @@ if(isset( $_SESSION['matrice'])){
         <br>
         <br>
         <label for="haut">HAUT:</label>
-        <input id="haut" type="radio" name="position" value="haut"/>
+        <input id="haut" type="radio" name="position" value="haut" />
         <label for="bas">BAS :</label>
         <input id="bas" type="radio" name="position" value="bas" />
         

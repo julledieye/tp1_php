@@ -19,9 +19,9 @@ session_start();
                 <input type="submit" name="valider">
             </div>
   </form>
-    <ul>
+    <ul type='circle'>
     <?php if(isset($_SESSION['nombre'])){
-      for($i=1 ; $i<$_SESSION['nombre'] ; $i++){ ?>
+      for($i=0 ; $i<$_SESSION['nombre'] ; $i++){ ?>
         <li><?= $i ?></li>
     <?php }}?>
     </ul>

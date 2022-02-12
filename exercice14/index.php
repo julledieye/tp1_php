@@ -29,13 +29,13 @@ include_once('fonction.php');
     <form>
         <label for="ok"> Voici les nombres valides :</label>
         <br>
-        <textArea id="ok" name="valide" cols="100" rows="1" readonly>
+        <textArea id="ok" name="valide" cols="100" rows="2" readonly>
         <?=isset($nombr1)?getResulat($tabValide):"" ?>
         </textArea>
         <br>
         <label for="ko"> Voici les nombres invalides :</label>
         <br>
-        <textArea id="ko" name="valide" cols="100" rows="1" readonly>
+        <textArea id="ko" name="valide" cols="100" rows="2" readonly>
         <?=isset($nombr2)?getResulat($tabInValide):''?>
         </textArea>
         <br>

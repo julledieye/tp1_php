@@ -13,6 +13,7 @@ if(isset($_REQUEST['position'])){
        $_SESSION['post']=$_POST;
        $_SESSION['matrice']=$matrice;
       header('location:index.php');
+      exit();
    }else{
         //var_dump($_REQUEST);
         $_SESSION['err']=$err;
