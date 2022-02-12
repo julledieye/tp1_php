@@ -1,20 +1,9 @@
+span{
+    color: red;
+}
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    flex-direction: column;
-    align-content: space-between;
-   
+    background-color: red;
 }
-ul.list{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr ;
-
-
-}
-li{
- border: 2px solid grey;
- list-style: none;
- width: 20em;
+.couleur{
+    border: 1px solid red;
 }

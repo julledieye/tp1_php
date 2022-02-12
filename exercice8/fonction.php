@@ -1,14 +1,14 @@
 <?php
+include_once('../fonctions.php');
 /**
- * fonction qui permettre d'afficher la liste 
- * des nombres compris entre 1 et N positif 
- * saisi par l'utilisateur 
+ * fonction qui teste si un champ est ok
  */
- function afficher_nombre($n){
-     for($i=1 ; $i<$n ;$i++ ){
-         echo "<li>".$i."</li>" ;
-     }
- }
-
-
+function estValide($n,string $key,array &$err){
+    if(estVide($n)){
+        $err[$key]="saisir une valeur " ;
+    }else{
+        if(!is_numeric($n)){
+        $err[$key]="saisir un numerique";
+    }    }
+}
 ?>

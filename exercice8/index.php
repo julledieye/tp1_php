@@ -1,34 +1,35 @@
+<style>
+.couleur{
+    border: 1px solid red;
+    font-size:bold;
+}
+</style>
 <?php
-require('fonction.php');
-if(isset($_REQUEST['valider'])){
-    $nombre = $_REQUEST['nombre'];
+session_start();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title> Exercie_8</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-    <div class="header">
-     <?php
-      if(!empty($nombre)){?>
-        <ul class="list">
-          <?php
-            afficher_nombre($nombre);
-          ?>
-        </ul>
-    <?php    }
-    }
-     ?>
-    </div>
-
-	<form action="index.php" method="GET">
+<link rel="stylesheet" type="text/css" href="css/stylle.css">
+	<form action="controller.php" method="POST">
             <div>
-                <span>Nombre</span>
-                <input type="number" name="nombre" required="required" min="1" >
+                <span>Nombre</span> 
+                <input type="text" name="nombre" class="<?=isset($_SESSION['err']['nombre'])?'couleur':'' ?>" >
+                <span style="color:red;">
+                  <?=isset($_SESSION['err']['nombre'])?$_SESSION['err']['nombre']:''?>
+                </span>
+                <p></p>
                 <input type="submit" name="valider">
             </div>
-    </form>
-</body>
-</html>
+  </form>
+    <ul>
+    <?php if(isset($_SESSION['nombre'])){
+      for($i=1 ; $i<$_SESSION['nombre'] ; $i++){ ?>
+        <li><?= $i ?></li>
+    <?php }}?>
+    </ul>
+<?php 
+  if(isset($_SESSION['err'])){
+    unset($_SESSION['err']);
+  }
+  if(isset($_SESSION['nombre'])){
+    unset($_SESSION['nombre']);
+  }
+?>

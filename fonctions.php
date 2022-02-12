@@ -11,6 +11,6 @@
     function estNum($n):bool{
         return is_numeric($n);
     }
-
+    
    
 ?>
