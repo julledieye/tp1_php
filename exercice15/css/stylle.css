@@ -1,0 +1,12 @@
+.couleur{
+    border:1px solid red;
+}
+.rouge{
+    background-color:red;
+}
+.blue{
+    background-color:blue;
+}
+.red_erreur{
+    color: red;
+}
