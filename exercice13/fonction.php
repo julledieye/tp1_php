@@ -61,18 +61,41 @@ function deletEsBefor(string &$phrase):void{
         $phrase=str_replace(' . ','. ',$phrase);
         $phrase[strpos($phrase,'. ')+2]=strtoupper($phrase[strpos($phrase,'. ')+2]);
     }
+    while(strpos($phrase,' .')!==false){
+        $phrase=str_replace(' .','. ',$phrase);
+        $phrase[strpos($phrase,'. ')+2]=strtoupper($phrase[strpos($phrase,'. ')+2]);
+    }
+    while(strpos($phrase,' - ')!==false){
+        $phrase=str_replace(' - ','-',$phrase);
+    }
+    while(strpos($phrase,' ? ')!==false){
+        $phrase=str_replace(' ? ','? ',$phrase);
+    }
     while(strpos($phrase,' , ')!==false){
         $phrase=str_replace(' , ',', ',$phrase);
+    }
+    while(strpos($phrase,'  ,')!==false){
+        $phrase=str_replace('  ,',', ',$phrase);
     }
     while(strpos($phrase,' ; ')!==false){
         $phrase=str_replace(' ; ','; ',$phrase);
     }
+    while(strpos($phrase,' : ')!==false){
+        $phrase=str_replace(' : ',': ',$phrase);
+    }
+    while(strpos($phrase,' ! ')!==false){
+        $phrase=str_replace(' ! ','! ',$phrase);
+    }
+    while(strpos($phrase,'. .')!==false){
+        $phrase=str_replace('. .','..',$phrase);
+    }
+
    
 }
 /**
  * fonction qui suprimmer les caracere especiau
  */
 function deletCareEsp(string &$phrase):void{
-    $phrase =str_replace(["*","&","\n","\t","<",">","$","£","#","/","²","\",{"],"",$phrase);
+    $phrase =str_replace(["_","%","|","]","[","~","°","^","µ","§","*","&","\n","\t","<",">","$","£","#","/","²","\",{"],"",$phrase);
 }
 ?>

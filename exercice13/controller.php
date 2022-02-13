@@ -9,11 +9,13 @@ if(isset($_POST['valider'])){
         deletEspace($phrase);
         deletCareEsp($phrase);
        deletEsBefor($phrase);
+       setcookie("phrase",$phrase);
+       header('location:index.php');
         //echo "<p>1 ".$phrase."</p>"." longueur est ".strlen($phrase) ;
        //var_dump(estMaju($phrase));
-       var_dump($phrase);
+       /*var_dump($phrase);
        echo "<br>" ;
-      
+    
         //$phrase=str_replace(' , ',', ',$phrase);
        
        echo "<br>" ;

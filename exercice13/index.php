@@ -13,6 +13,9 @@
 </style>
 <?php
 session_start();
+if(isset($_COOKIE['phrase'])){
+  var_dump($_COOKIE['phrase']);
+}
 if(isset($_SESSION['erreur'])){
   var_dump($_SESSION['erreur']);
 }
@@ -40,7 +43,7 @@ if(isset($_SESSION['phrase'])){
         <label for="co"> Apres corection de la phrase:</label>
         <br>
         <textArea id="co" name="phrase_corrige" readonly cols="130" rows="3">
-         
+         <?=isset($_COOKIE['phrase'])?$_COOKIE['phrase']:""?>
         </textArea>
         
     </form>
@@ -52,5 +55,7 @@ if(isset($_SESSION['phrase'])){
   if(isset($_SESSION['post'])){
     unset($_SESSION['post']);
   }
- 
+  if(isset($_COOKIE['phrase'])){
+    setcookie("phrase","");
+  }
 ?>
