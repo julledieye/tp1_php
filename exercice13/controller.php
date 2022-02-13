@@ -7,9 +7,14 @@ if(isset($_POST['valider'])){
     estValide($phrase,"erreur",$erreur);
     if(count($erreur)==0){   
         deletEspace($phrase);
+        deletCareEsp($phrase);
+       deletEsBefor($phrase);
         //echo "<p>1 ".$phrase."</p>"." longueur est ".strlen($phrase) ;
        //var_dump(estMaju($phrase));
        var_dump($phrase);
+       echo "<br>" ;
+      
+        //$phrase=str_replace(' , ',', ',$phrase);
        
        echo "<br>" ;
        var_dump($phrase);

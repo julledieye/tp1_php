@@ -35,8 +35,12 @@ function estValide(string &$phrase,string $key,array &$erreur):void{
         if(!estMaju($phrase)){
             $erreur[$key]="Veuillez saisir une phrase qui commence par une lettre majuscule ";
         }else{
-            if(!endPoint($phrase)){
-                $erreur[$key]="Veuillez saisir une phrase qui se termine par un point ";
+            if(!estLong($phrase)){
+                $erreur[$key]="Veuillez saisir une phrase qui a 25 caracter au moins ";
+            }else{
+                if(!endPoint($phrase)){
+                    $erreur[$key]="Veuillez saisir une phrase qui se termine par un point ";
+                }
             }
         }
     }
@@ -48,5 +52,27 @@ function deletEspace(string &$phrase):void{
     while(strpos($phrase,"  ")!==false){
         $phrase=str_replace("  "," ",$phrase);
     }
+}
+/**
+ * fonction qui supprime les espace a gauche befor point
+ */
+function deletEsBefor(string &$phrase):void{
+    while(strpos($phrase,' . ')!==false){
+        $phrase=str_replace(' . ','. ',$phrase);
+        $phrase[strpos($phrase,'. ')+2]=strtoupper($phrase[strpos($phrase,'. ')+2]);
+    }
+    while(strpos($phrase,' , ')!==false){
+        $phrase=str_replace(' , ',', ',$phrase);
+    }
+    while(strpos($phrase,' ; ')!==false){
+        $phrase=str_replace(' ; ','; ',$phrase);
+    }
+   
+}
+/**
+ * fonction qui suprimmer les caracere especiau
+ */
+function deletCareEsp(string &$phrase):void{
+    $phrase =str_replace(["*","&","\n","\t","<",">","$","£","#","/","²","\",{"],"",$phrase);
 }
 ?>
