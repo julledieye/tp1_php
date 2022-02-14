@@ -11,21 +11,6 @@ if(isset($_POST['valider'])){
        deletEsBefor($phrase);
        setcookie("phrase",$phrase);
        header('location:index.php');
-        //echo "<p>1 ".$phrase."</p>"." longueur est ".strlen($phrase) ;
-       //var_dump(estMaju($phrase));
-       /*var_dump($phrase);
-       echo "<br>" ;
-    
-        //$phrase=str_replace(' , ',', ',$phrase);
-       
-       echo "<br>" ;
-       var_dump($phrase);
-       
-      // echo "<p>2 ".$phrase."</p>"." longueur est ".strlen($phrase) ;
-       //var_dump(estLong($phrase));
-       /*$_SESSION['phrase']=$phrase;
-       header('location:index.php');*/
-        
     }else{
         $_SESSION['erreur']=$erreur;
         $_SESSION['post']=$_POST;
