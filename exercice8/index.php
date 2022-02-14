@@ -7,6 +7,10 @@
 <?php
 session_start();
 ?>
+<p>
+    <a href="../exercice7"> 7 < < <</a> | <a href="../exercice9"> > > > 9</a>
+</p>
+        <p>VOUS ETES DANS EXERCICE 8 </p>
 <link rel="stylesheet" type="text/css" href="css/stylle.css">
 	<form action="controller.php" method="POST">
             <div>

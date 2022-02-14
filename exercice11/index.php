@@ -15,6 +15,9 @@ if(isset($_REQUEST['valider'])){
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<a href="../exercice10"> 10 < < <</a> | <a href="../exercice12"> > > > 12</a>
+</p>
+        <p>VOUS ETES DANS EXERCICE 11 </p>
 <br>
 	<form action="index.php" method="GET">
             <div>

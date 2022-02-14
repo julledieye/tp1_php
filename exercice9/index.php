@@ -10,7 +10,7 @@ if(isset($_REQUEST['valider'])){
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <div class="header">
+  <div class="header">
      <?php
       if(!empty($nombre)){?>
         <ul class="list">
@@ -22,7 +22,11 @@ if(isset($_REQUEST['valider'])){
     }
      ?>
     </div>
-
+    <p>
+    <a href="../exercice8"> 8 < < <</a> | <a href="../exercice10"> > > > 10</a>
+</p>
+        <p>VOUS ETES DANS EXERCICE 9 </p>
+  
 	<form action="index.php" method="GET">
             <div>
                 <label>Nombre</label>

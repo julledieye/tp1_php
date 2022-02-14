@@ -1,0 +1,18 @@
+ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 1em;
+	background-color: grey;
+}
+li{
+	padding: 0.5em;
+	list-style-type: none;
+	text-decoration: none;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	display: flex;
+}

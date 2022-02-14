@@ -6,12 +6,13 @@ if(isset($_POST['valider'])){
     $erreur=[];
     estValide($phrase,"erreur",$erreur);
     if(count($erreur)==0){   
-        deletEspace($phrase);
-        deletCareEsp($phrase);
-       deletEsBefor($phrase);
-       setcookie("phrase",$phrase);
-       header('location:index.php');
+      deletEspace($phrase);
+      deletCareEsp($phrase);
+      deletEsBefor($phrase);
+      setcookie("phrase",$phrase);
+      header('location:index.php');
     }else{
+        lonPhrase($phrase);
         $_SESSION['erreur']=$erreur;
         $_SESSION['post']=$_POST;
         header('location:index.php');

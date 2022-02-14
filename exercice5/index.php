@@ -1,3 +1,8 @@
+
+    <a href="../exercice4"> 4 < < <</a> | <a href="../exercice6"> > > > 6</a>
+        </p>
+        <p>VOUS ETES DANS EXERCICE 5 </p>
+
 <?php
 include_once('fonction.php') ;
 $tab = [];

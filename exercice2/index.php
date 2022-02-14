@@ -9,6 +9,10 @@ require('fonction.php');
         <link rel="stylesheet" type="text/css" href="style.css">
     </heade>
     <body>
+    <p>
+    <a href="../exercice1"> 1 < < <</a> | <a href="../exercice3">>> 3</a>
+        </p>
+        <p>VOUS ETES DANS EXERCICE 2 </p>
         <div> 
             <?php
                 $lon_lar=longuer_largeur();

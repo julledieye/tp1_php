@@ -28,6 +28,20 @@ function endPoint($phrase):int{
 /**
  * fonction qui teste si une phrase est correcte
  */
+/**
+ * fonction qui test si une phrase compte25 caracter
+ */
+function lonPhrase($phrase):bool{
+    $phrase= explode(".",trim($phrase));
+    $i=0;
+    while($i<count($phrase) && strlen($phrase[$i])>=25){
+        $i++;
+    }
+    if($i<count($phrase)){
+        return true;
+    }
+    return false;
+}
 function estValide(string &$phrase,string $key,array &$erreur):void{
     if(estVide(trim($phrase))){
         $erreur[$key]="Veuillez saisir une phrase ";
@@ -63,7 +77,7 @@ function deletEsBefor(string &$phrase):void{
     }
     while(strpos($phrase,' .')!==false){
         $phrase=str_replace(' .','. ',$phrase);
-        $phrase[strpos($phrase,'. ')+2]=strtoupper($phrase[strpos($phrase,'. ')+2]);
+       // $phrase[strpos($phrase,'. ')+2]=strtoupper($phrase[strpos($phrase,'. ')+2]);
     }
     while(strpos($phrase,' - ')!==false){
         $phrase=str_replace(' - ','-',$phrase);

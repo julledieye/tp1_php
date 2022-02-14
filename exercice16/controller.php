@@ -1,0 +1,30 @@
+<?php
+session_start();
+include_once('fonction.php');
+if(isset($_REQUEST['position'])){
+   $taille=$_REQUEST['taille'];
+   $position=$_REQUEST['position'];
+   $couleur=$_REQUEST['couleur'];
+   $err=[];
+   estValide($taille,"taille",$err);
+   if(count($err)==0){
+       $matrice=[];
+       remplirMatrice($taille,$matrice);
+       $_SESSION['post']=$_POST;
+       $_SESSION['matrice']=$matrice;
+      header('location:index.php');
+      exit();
+   }else{
+        //var_dump($_REQUEST);
+        $_SESSION['err']=$err;
+        header('location:index.php');
+        exit();
+   }
+}else{
+    $_SESSION['erreur']="il faux choisir une position";
+    $_SESSION['post']=$_POST;
+    header('location:index.php');
+        exit();
+}
+
+?>

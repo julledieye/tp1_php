@@ -12,6 +12,9 @@ include_once('fonction.php');
     }
   
 ?>
+<a href="../exercice13"> 13 < < <</a> | <a href="../exercice15"> > > > 15</a>
+</p>
+        <i>VOUS ETES DANS EXERCICE 14 </i>
 <div class="container">
     <form action="controller.php" method="POST" >
         <label for="text"> Saisir un nombre :</label>

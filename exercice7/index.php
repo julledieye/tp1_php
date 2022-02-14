@@ -23,6 +23,11 @@ if(isset($_REQUEST['valider'])){
         }
     }
      ?>
+
+<p>
+    <a href="../exercice6"> 6 < < <</a> | <a href="../exercice8"> > > > 8</a>
+</p>
+        <p>VOUS ETES DANS EXERCICE 7 </p>
     </div>
 
 	<form action="index.php" method="GET">

@@ -2,40 +2,13 @@
 <?php
 session_start();
 include_once('fonction.php');
-if(isset( $_SESSION['matrice'])){
-    $post=$_SESSION['post'];
-    $matrice=$_SESSION['matrice'];
-  //  var_dump($post);
-    echo "<p></p>" ;
-    for($i=0;$i<count($matrice);$i++){
-        for($j=0 ;$j<count($matrice);$j++){
-            if($i<$j){  
-             echo "<span class=".getCouleur($post['position'],"haut",$post['couleur']).">".affichUnElement($i,$j,$matrice)."</span>";
-            }else{
-                if($i>$j)
-                echo "<span class=".getCouleur($post['position'],"bas",$post['couleur']).">".affichUnElement($i,$j,$matrice)."</span>";
-                 else
-                 echo "<span style='background-color:black;'>".affichUnElement($i,$j,$matrice)."</span>";
-            }
-        }
-        echo "<br>" ;
-    }
-}
-
 ?>
-
-<a href="../exercice14"> 14 < < <</a> | <a href="../exercice16"> > > > 16</a>
-</p>
-        <i>VOUS ETES DANS EXERCICE 15 </i>
 <form action="controller.php" method="POST">
     <br>
     <fieldset>
         <legend> Choix:</legend>
         <label for="">Taille de la matrice :</label>
-        <input type="text" name="taille" 
-            class=" <?=(isset($_SESSION['err']['taille']))?'couleur':'' ?>"
-            value="<?=isset($_SESSION['post']['taille'])?$_SESSION['post']['taille']:''?>"
-        />
+        <input type="text" name="taille" />
         <span class="red_erreur">
         <?=(isset($_SESSION['err']['taille']))?$_SESSION['err']['taille']:"" ?>
         </span>

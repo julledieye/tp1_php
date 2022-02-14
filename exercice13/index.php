@@ -25,6 +25,10 @@ if(isset($_SESSION['phrase'])){
   
 
 ?>
+<a href="../exercice12"> 12 < < <</a> | <a href="../exercice14"> > > > 14</a>
+</p>
+        <i>VOUS ETES DANS EXERCICE 13 </i>
+<br>
 <div>
     <form action="controller.php" method="POST">
         <label for="te"> Ecrire des  phrases:</label>

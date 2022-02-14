@@ -9,6 +9,10 @@ require('fonction.php');
         <link rel="stylesheet" type="text/css" href="style.css">
     </heade>
     <body>
+    <p>
+    <a href="../exercice2"> 2 < < <</a> | <a href="../exercice4"> > > > 4</a>
+        </p>
+        <p>VOUS ETES DANS EXERCICE 3 </p>
         <div> 
             <?php
                 $tab=generer_deux_nombre();

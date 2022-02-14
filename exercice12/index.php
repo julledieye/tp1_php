@@ -1,3 +1,9 @@
+
+
+<a href="../exercice11"> 11 < < <</a> | <a href="../exercice13"> > > > 13</a>
+</p>
+        <p>VOUS ETES DANS EXERCICE 12 </p>
+<br>
 <form action="index.php" method="GET">
             <div>
                 <label for="n">choisi une langue : </label>

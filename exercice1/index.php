@@ -9,6 +9,10 @@ require('fonction.php');
         <link rel="stylesheet" type="text/css" href="style.css">
     </heade>
     <body>
+        <p>
+            <a href="../exercice2">>> 2</a>
+        </p>
+        <p>VOUS ETES DANS EXERCICE 1V </p>
         <div> 
             <?php
                 $cote=cote_carre();
